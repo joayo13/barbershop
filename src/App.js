@@ -8,7 +8,7 @@ function App() {
   const [mobileMenuShowing, setMobileMenuShowing] = useState(false)
   return (
     <div className="bg-neutral-900">
-      <nav className="fixed flex w-full items-center justify-between md:h-32 h-16 px-2 text-neutral-300 z-40">
+      <nav className="fixed flex w-full items-center justify-between md:h-32 h-16 px-2 text-neutral-300 z-30">
       <p className="text-6xl">BB</p>
       <button onClick={() => {setMobileMenuActive(!mobileMenuActive); setMobileMenuShowing(true)}}>
         <div className="hb w-8 h-8 md:w-16 md:h-16">
