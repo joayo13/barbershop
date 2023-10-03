@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap');
 
+body {
+  font-family: 'Playfair Display', 'serif';
+  background-color: rgb(212, 212, 212);
+}
 .hb {
   position: relative;
 }
