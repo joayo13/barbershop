@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoBanner from "./components/VideoBanner";
 import MobileMenu from "./components/MobileMenu";
 import { Link } from "react-router-dom";
@@ -8,10 +8,40 @@ import ImageCarousel from "./components/ImageCarousel";
 function App() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false)
   const [mobileMenuShowing, setMobileMenuShowing] = useState(false)
-  
+  const [scrollDir, setScrollDir] = useState("scrolling up");
+
+useEffect(() => {
+  const threshold = 0;
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateScrollDir = () => {
+    const scrollY = window.scrollY;
+
+    if (Math.abs(scrollY - lastScrollY) < threshold) {
+      ticking = false;
+      return;
+    }
+    setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
+    lastScrollY = scrollY > 0 ? scrollY : 0;
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollDir);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener("scroll", onScroll);
+  console.log(scrollDir);
+
+  return () => window.removeEventListener("scroll", onScroll);
+}, [scrollDir]);
   return (
     <div>
-      <nav className="fixed nav flex w-full items-center justify-end md:h-48 h-16 px-4 text-neutral-300 z-30">
+      <nav style={scrollDir === 'scrolling up' ? {visibility: 'visible'} : {visibility: 'hidden'}} className="fixed nav flex w-full items-center justify-end md:h-48 h-16 px-4 text-neutral-300 z-30">
       <img src={logo} className="absolute top-2 md:w-32 md:h-32 h-16 w-16 left-2 md:left-1/2 md:-translate-x-1/2"></img>
       <ul className="md:flex absolute bottom-0 left-1/2 -translate-x-1/2 gap-8 text-3xl hidden">
         <Link to='/'>Home</Link>
