@@ -2,14 +2,17 @@ import { useState } from "react";
 import VideoBanner from "./components/VideoBanner";
 import MobileMenu from "./components/MobileMenu";
 import { Link } from "react-router-dom";
+import logo from './images/logo2.png'
+import ImageCarousel from "./components/ImageCarousel";
 
 function App() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false)
   const [mobileMenuShowing, setMobileMenuShowing] = useState(false)
+  
   return (
     <div>
-      <nav className="fixed flex w-full items-center justify-end md:h-32 h-16 px-4 text-neutral-300 z-30">
-      <p className="text-neutral-300 text-xl absolute top-2 left-1/2 -translate-x-1/2">Billy's Barber</p>
+      <nav className="fixed nav flex w-full items-center justify-end md:h-48 h-16 px-4 text-neutral-300 z-30">
+      <img src={logo} className="absolute top-2 md:w-32 md:h-32 h-16 w-16 left-2 md:left-1/2 md:-translate-x-1/2"></img>
       <ul className="md:flex absolute bottom-0 left-1/2 -translate-x-1/2 gap-8 text-3xl hidden">
         <Link to='/'>Home</Link>
         <Link to='/'>Reservations</Link>
@@ -34,6 +37,9 @@ function App() {
       <VideoBanner/>
       <h2 className="text-center py-4 text-6xl text-red-900">Ottawa Barbershop</h2>
       <p className="italic text-center text-xl">We provide the freshest cuts in the city.</p>
+      <section className="py-4">
+        <ImageCarousel/>
+      </section>
     </div>
   );
 }
