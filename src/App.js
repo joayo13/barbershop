@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ImageCarousel from "./components/ImageCarousel";
 import logo from './images/logo.png'
 import barberChairPhoto from './images/pexels-lisa-fotios-1895701.jpg'
+import BarberServices from "./components/BarberServices";
 
 function App() {
   const [mobileMenuActive, setMobileMenuActive] = useState(false)
@@ -85,6 +86,9 @@ useEffect(() => {
         <p className="max-w-lg mx-auto text-xl">Our team of experienced and skilled barbers is the backbone of our success. We take pride in our talented and diverse staff, each of whom is committed to delivering the highest level of service. Our barbers are not just professionals; they are artists who continually refine their skills and stay at the forefront of industry trends.</p>
         </div>
         <img className="w-1/4 grayscale object-cover hidden md:block" src={barberChairPhoto}></img>
+      </section>
+      <section>
+        <BarberServices/>
       </section>
     </div>
   );
