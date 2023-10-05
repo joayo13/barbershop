@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import VideoBanner from "./components/VideoBanner";
 import MobileMenu from "./components/MobileMenu";
 import { Link } from "react-router-dom";
-import logo from './images/logo2.png'
 import ImageCarousel from "./components/ImageCarousel";
 
 function App() {
@@ -40,17 +39,18 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", onScroll);
 }, [scrollDir]);
   return (
-    <div>
-      <nav style={scrollDir === 'scrolling up' ? {visibility: 'visible'} : {visibility: 'hidden'}} className="fixed nav flex w-full items-center justify-end md:h-48 h-16 px-4 text-neutral-300 z-30">
-      <img src={logo} className="absolute top-2 md:w-32 md:h-32 h-16 w-16 left-2 md:left-1/2 md:-translate-x-1/2"></img>
-      <ul className="md:flex absolute bottom-0 left-1/2 -translate-x-1/2 gap-8 text-3xl hidden">
+    <div className="relative">
+      <nav style={scrollDir === 'scrolling up' ? {visibility: 'visible'} : {visibility: 'hidden'}} className="fixed nav flex w-full items-center h-12 text-neutral-300 bg-neutral-950 z-30">
+      <h2 className="px-2">BB</h2>
+      <ul className="md:flex absolute left-1/2 -translate-x-1/2 gap-8 text-xl hidden">
         <Link to='/'>Home</Link>
         <Link to='/'>Reservations</Link>
         <Link to='/'>About</Link>
         <Link to='/'>Contact</Link>
         </ul>
-      <button onClick={() => {setMobileMenuActive(!mobileMenuActive); setMobileMenuShowing(true)}}>
-        <div className="hb w-8 h-8 md:w-16 md:h-16 md:hidden">
+      </nav>
+      <button style={scrollDir === 'scrolling up' ? {visibility: 'visible'} : {visibility: 'hidden'}} className="z-40 fixed top-2 right-2" onClick={() => {setMobileMenuActive(!mobileMenuActive); setMobileMenuShowing(true)}}>
+        <div className="hb w-8 h-8 md:hidden">
           {mobileMenuShowing ? 
           <><div style={ mobileMenuActive ? {animation: 'hb1 0.3s linear forwards'} : {animation: 'hb1r 0.3s linear forwards'}} className="hb1"></div>
           <div style={ mobileMenuActive ? {animation: 'hb2 0.15s linear forwards'} : {animation: 'hb2r 0.15s linear forwards'}} className="hb2"></div>
@@ -60,9 +60,8 @@ useEffect(() => {
           <div className="hb3"></div></>}
         </div>
         </button>
-      </nav>
       {mobileMenuShowing ? <>
-      {mobileMenuActive ? <MobileMenu slide={'left'} setMobileMenuActive={setMobileMenuActive}/> : <MobileMenu slide={'right'} setMobileMenuActive={setMobileMenuActive}/>}
+      {mobileMenuActive ? <MobileMenu mobileMenuActive={mobileMenuActive} slide={'left'} setMobileMenuActive={setMobileMenuActive}/> : <MobileMenu slide={'right'} setMobileMenuActive={setMobileMenuActive}/>}
       </> : null}
       <VideoBanner/>
       <h2 className="text-center py-4 text-6xl text-red-900">Ottawa Barbershop</h2>
