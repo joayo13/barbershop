@@ -1,73 +1,12 @@
-import { useEffect, useState } from "react";
 import VideoBanner from "./components/VideoBanner";
-import MobileMenu from "./components/MobileMenu";
-import { Link } from "react-router-dom";
 import ImageCarousel from "./components/ImageCarousel";
-import logo from './images/logo.png'
 import barberChairPhoto from './images/pexels-lisa-fotios-1895701.jpg'
 import BarberServices from "./components/BarberServices";
+import SalonServices from "./components/SalonServices";
 
 function App() {
-  const [mobileMenuActive, setMobileMenuActive] = useState(false)
-  const [mobileMenuShowing, setMobileMenuShowing] = useState(false)
-  const [scrollDir, setScrollDir] = useState("scrolling up");
-
-useEffect(() => {
-  const threshold = 0;
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-
-  const updateScrollDir = () => {
-    const scrollY = window.scrollY;
-
-    if (Math.abs(scrollY - lastScrollY) < threshold) {
-      ticking = false;
-      return;
-    }
-    setScrollDir(scrollY > lastScrollY ? "scrolling down" : "scrolling up");
-    lastScrollY = scrollY > 0 ? scrollY : 0;
-    ticking = false;
-  };
-
-  const onScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(updateScrollDir);
-      ticking = true;
-    }
-  };
-
-  window.addEventListener("scroll", onScroll);
-  console.log(scrollDir);
-
-  return () => window.removeEventListener("scroll", onScroll);
-}, [scrollDir]);
   return (
     <div className="relative">
-      <nav style={scrollDir === 'scrolling up' ? {animation: 'slideDown 200ms ease forwards'} : {animation: 'slideUp 200ms ease forwards'}} className="fixed nav flex w-full items-center justify-between p-4 text-neutral-300 bg-neutral-950 z-40">
-      <img src={logo} className="px-2 w-44"></img>
-      <ul className="md:flex absolute items-center left-1/2 -translate-x-1/2 gap-8 text-xl hidden">
-      
-        <Link to='/'>Services</Link>
-        <Link to='/'>About</Link>
-        <Link to='/'>Our Barbers</Link>
-        <Link to='/'>Contact</Link>
-        </ul>
-        <button style={scrollDir === 'scrolling up' ? {visibility: 'visible'} : {visibility: 'hidden'}} onClick={() => {setMobileMenuActive(!mobileMenuActive); setMobileMenuShowing(true)}}>
-        <div className="hb w-8 h-8 md:hidden">
-          {mobileMenuShowing ? 
-          <><div style={ mobileMenuActive ? {animation: 'hb1 0.3s linear forwards'} : {animation: 'hb1r 0.3s linear forwards'}} className="hb1"></div>
-          <div style={ mobileMenuActive ? {animation: 'hb2 0.15s linear forwards'} : {animation: 'hb2r 0.15s linear forwards'}} className="hb2"></div>
-          <div style={ mobileMenuActive ? {animation: 'hb3 0.3s linear forwards'} : {animation: 'hb3r 0.3s linear forwards'}} className="hb3"></div></>
-          : <><div className="hb1"></div>
-          <div className="hb2"></div>
-          <div className="hb3"></div></>}
-        </div>
-        </button>
-      </nav>
-      
-      {mobileMenuShowing ? <>
-      {mobileMenuActive ? <MobileMenu mobileMenuActive={mobileMenuActive} slide={'left'} setMobileMenuActive={setMobileMenuActive}/> : <MobileMenu slide={'right'} setMobileMenuActive={setMobileMenuActive}/>}
-      </> : null}
       <VideoBanner/>
       <h2 className="text-center py-4 text-6xl text-red-900">Ottawa Barbershop</h2>
       <p className="italic text-center text-xl">We provide the freshest cuts in the city.</p>
@@ -87,8 +26,9 @@ useEffect(() => {
         </div>
         <img className="w-1/4 grayscale object-cover hidden md:block" src={barberChairPhoto}></img>
       </section>
-      <section>
+      <section className="w-xl flex flex-col md:flex-row mx-auto justify-center items-center gap-12">
         <BarberServices/>
+        <SalonServices/>
       </section>
     </div>
   );

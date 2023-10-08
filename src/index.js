@@ -3,12 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Services from './pages/Services';
+import Nav from './components/Nav';
+import NotFound from './pages/Notfound';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <App />
+  <Nav/>
+  <Routes>
+    <Route path='/' Component={App}></Route>
+    <Route path='/services' Component={Services}></Route>
+    <Route path='/contact' Component={Contact}></Route>
+    <Route path='/about' Component={About}></Route>
+    <Route path='*' Component={NotFound}></Route>
+  </Routes>
+   
   </BrowserRouter>
 );
 
