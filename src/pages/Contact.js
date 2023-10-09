@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import scrollToTop from '../helpers/scrollToTop';
 
 function Contact() {
+  useEffect(() => {
+    scrollToTop()
+  },[])
     const [formData, setFormData] = useState({
         name: '',
         email: '',

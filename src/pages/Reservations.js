@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BarberShopReservation from '../components/BarberShopReservation'
+import scrollToTop from '../helpers/scrollToTop'
 
 function Reservations() {
+  useEffect(() => {
+    scrollToTop()
+  },[])
   return (
     <div>
         <div className='relative'>

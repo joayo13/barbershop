@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import BarberServices from '../components/BarberServices'
 import SalonServices from '../components/SalonServices'
+import scrollToTop from '../helpers/scrollToTop'
 
 function Services() {
+  useEffect(() => {
+    scrollToTop()
+  },[])
   return (
     <div>
         <div className='relative'>

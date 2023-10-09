@@ -10,7 +10,7 @@ function MobileMenu({mobileMenuActive, setMobileMenuActive, slide}) {
             <Link onClick={() => setMobileMenuActive(false)} to='/about'>About</Link>
             <Link onClick={() => setMobileMenuActive(false)} to='/team'>Our Team</Link>
             <Link onClick={() => setMobileMenuActive(false)} to='/contact'>Contact</Link>
-            <Link to='/reservations' className='bg-red-900 px-4 py-2 font-bold'>Book Now</Link>
+            <Link onClick={() => setMobileMenuActive(false)} to='/reservations' className='bg-red-900 px-4 py-2 font-bold'>Book Now</Link>
           </div>
           
       </div>

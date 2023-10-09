@@ -66,16 +66,15 @@ function BarberShopReservation() {
           </select>
         </div>
         <div className="select-container">
-          <div className="label underline">Select Date</div>
+          <div className="label">Select Date</div>
           <input className='bg-neutral-300' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
         </div>
         <div className="select-container">
-          <div className="label underline mb-2">Select Time</div>
+          <div className="label mb-2">Select Time</div>
           <CustomSelect options={timeSlots} value={selectedTime} onChange={handleTimeChange} />
         </div>
         <div>
-          <label>Your Email: </label>
-          <input type='email' className='bg-red-900 bg-opacity-10'>
+          <input placeholder='Email Address' type='email' className='bg-red-900 px-3 bg-opacity-10 placeholder:text-red-800'>
           </input>
         </div>
         {message ? <p className='max-w-xl'>{message}</p> : null}

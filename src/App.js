@@ -3,8 +3,13 @@ import ImageCarousel from "./components/ImageCarousel";
 import barberChairPhoto from './images/pexels-lisa-fotios-1895701.jpg'
 import BarberServices from "./components/BarberServices";
 import SalonServices from "./components/SalonServices";
+import { useEffect } from "react";
+import scrollToTop from "./helpers/scrollToTop";
 
 function App() {
+  useEffect(() => {
+    scrollToTop()
+  },[])
   return (
     <div className="relative">
       <VideoBanner/>
