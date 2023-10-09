@@ -55,26 +55,26 @@ function BarberShopReservation() {
   };
 
   return (
-    <div className='text-center nav text-red-800 text-3xl flex flex-col items-center py-4'>
+    <div className='text-center nav text-red-800 text-2xl flex flex-col items-center py-4'>
       <form className='flex flex-col gap-2 items-center' onSubmit={handleSubmit}>
       <div>
-          <label>Select Stylist: </label>
-          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='bg-red-900 bg-opacity-10'>
+          <div className='font-bold'>Stylist </div>
+          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border text-xl border-red-800 bg-neutral-300 font-bold'>
             <option value="Sierra">Sierra</option>
             <option value="Billy">Billy</option>
             <option value="Jonny">Jonny</option>
           </select>
         </div>
         <div className="select-container">
-          <div className="label">Select Date</div>
-          <input className='bg-neutral-300' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
+          <div className="label font-bold">Date</div>
+          <input className='bg-neutral-300 font-bold text-xl border border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
         </div>
         <div className="select-container">
-          <div className="label mb-2">Select Time</div>
+          <div className="label mb-2 font-bold">Time</div>
           <CustomSelect options={timeSlots} value={selectedTime} onChange={handleTimeChange} />
         </div>
         <div>
-          <input placeholder='Email Address' type='email' className='bg-red-900 px-3 bg-opacity-10 placeholder:text-red-800'>
+          <input placeholder='Your Email Address' type='email' className='bg-neutral-300 text-center border border-red-800 px-3 placeholder:text-red-800'>
           </input>
         </div>
         {message ? <p className='max-w-xl'>{message}</p> : null}
