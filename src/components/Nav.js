@@ -9,7 +9,7 @@ function Nav() {
     const [scrollDir, setScrollDir] = useState("scrolling up");
   
   useEffect(() => {
-    const threshold = 0;
+    const threshold = 75;
     let lastScrollY = window.scrollY;
     let ticking = false;
   
@@ -38,7 +38,9 @@ function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollDir]);
   return (
-    <div><nav style={scrollDir === 'scrolling up' ? {animation: 'slideDown 200ms ease forwards'} : {animation: 'slideUp 200ms ease forwards'}} className="fixed nav flex w-full items-center justify-between p-4 text-neutral-300 bg-neutral-950 z-40">
+    <div>
+      <div className='h-20 bg-neutral-950'></div>
+      <nav style={scrollDir === 'scrolling up' ? {animation: 'slideDown 200ms ease forwards'} : {animation: 'slideUp 200ms ease forwards'}} className="fixed top-0 nav flex w-full items-center justify-between text-neutral-300 h-20 px-4 bg-neutral-950 z-40">
     <Link onClick={() => setMobileMenuActive(false)} to="/">
     <img src={logo} className="px-2 w-44"></img>
     </Link>

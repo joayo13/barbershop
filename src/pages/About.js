@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import scrollToTop from '../helpers/scrollToTop'
 
 function About() {
+  useEffect(() => {
+    scrollToTop()
+  },[])
   return (
     <div>
         <div className='relative'>
