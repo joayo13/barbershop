@@ -9,6 +9,8 @@ import Nav from './components/Nav';
 import NotFound from './pages/Notfound';
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Team from './pages/Team';
+import Reservations from './pages/Reservations';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +21,8 @@ root.render(
     <Route path='/services' Component={Services}></Route>
     <Route path='/contact' Component={Contact}></Route>
     <Route path='/about' Component={About}></Route>
+    <Route path='/team' Component={Team}></Route>
+    <Route path='/reservations' Component={Reservations}></Route>
     <Route path='*' Component={NotFound}></Route>
   </Routes>
    

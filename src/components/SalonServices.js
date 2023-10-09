@@ -15,7 +15,7 @@ function SalonServices() {
         </div>
         <div className="text-left">
         <div className="flex items-end">
-        <h2 className="font-bold min-w-fit">Salon Cut - 13 & Under (Formerly Girls Cut)</h2>
+        <h2 className="font-bold min-w-fit">Salon Cut - 13 & Under</h2>
         <div className="h-px w-full mb-1 bg-neutral-400"></div>
         <p>$31.00+</p>
         </div>

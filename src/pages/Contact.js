@@ -21,12 +21,12 @@ function Contact() {
       };
     
       return (
-        <div>
+        <div className='bg-red-950 bg-opacity-10'>
             <div className='relative'>
             <img className='brightness-75 grayscale object-cover h-[40vh] object-left-bottom w-full' src='https://lella.qodeinteractive.com/wp-content/uploads/2019/08/title-area-img-1.jpg'></img>
             <h2 className="absolute h-full top-0 flex items-center left-1/2 -translate-x-1/2 text-center py-4 text-6xl text-red-800">Contact Us</h2>
         </div>
-        <div className="max-w-xl mx-auto p-6 text-red-800">
+        <div className="max-w-xl mx-auto p-6 text-red-800 nav">
           <p className='text-xl'>We'd love to hear from you! Fill out the form below to get in touch with us.</p>
     
           <form onSubmit={handleSubmit} className="mt-4">

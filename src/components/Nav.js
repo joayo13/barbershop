@@ -39,7 +39,7 @@ function Nav() {
   }, [scrollDir]);
   return (
     <div><nav style={scrollDir === 'scrolling up' ? {animation: 'slideDown 200ms ease forwards'} : {animation: 'slideUp 200ms ease forwards'}} className="fixed nav flex w-full items-center justify-between p-4 text-neutral-300 bg-neutral-950 z-40">
-    <Link to="/">
+    <Link onClick={() => setMobileMenuActive(false)} to="/">
     <img src={logo} className="px-2 w-44"></img>
     </Link>
     <ul className="md:flex absolute items-center left-1/2 -translate-x-1/2 gap-8 text-xl hidden">
