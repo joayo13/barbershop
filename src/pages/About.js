@@ -13,7 +13,7 @@ function About() {
         </div>
         <section className="py-20 gap-4 flex justify-center relative text-neutral-950">
         <h2 className="text-9xl hidden lg:block absolute top-52 -left-48 text-red-900 rotate-90"></h2>
-        <img src='https://images.pexels.com/photos/7697488/pexels-photo-7697488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className="w-1/4 grayscale object-cover hidden md:block" ></img>
+        <img src='https://images.pexels.com/photos/6475046/pexels-photo-6475046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className="w-1/4 grayscale object-cover hidden md:block" ></img>
         <div className="flex flex-col gap-4 px-4">
         <p className="text-4xl">How We Started</p>
         <p className="italic">Ottawa | Since 2023</p>
