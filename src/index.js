@@ -11,6 +11,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Team from './pages/Team';
 import Reservations from './pages/Reservations';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,7 +26,7 @@ root.render(
     <Route path='/reservations' Component={Reservations}></Route>
     <Route path='*' Component={NotFound}></Route>
   </Routes>
-   
+  <Footer/>
   </BrowserRouter>
 );
 
