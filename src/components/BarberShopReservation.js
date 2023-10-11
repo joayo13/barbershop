@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // Custom select component
 function CustomSelect({ options, value, onChange }) {
   return (
-    <div className="max-w-xl flex flex-wrap gap-2 justify-center text-xl">
+    <div className="max-w-lg flex flex-wrap gap-2 justify-start text-xl">
       {options.map((option) => (
         <button
           key={option}
@@ -55,30 +55,32 @@ function BarberShopReservation() {
   };
 
   return (
-    <div className='text-center nav text-red-800 text-2xl flex flex-col items-center py-4'>
-      <form className='flex flex-col gap-2 items-center' onSubmit={handleSubmit}>
-      <div>
-          <div className='font-bold'>Stylist </div>
-          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border text-xl border-red-800 bg-neutral-300 font-bold'>
+    <div className='nav text-red-800 py-4'>
+      <form className='flex w-fit text-lg mx-auto flex-col gap-2 items-start px-4' onSubmit={handleSubmit}>
+      <div className='flex py-4 flex-col w-full items-start gap-4'>
+      <div className='flex gap-2'>
+          <div className='font-bold'>Stylist: </div>
+          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border border-red-800 bg-neutral-300 font-bold'>
             <option value="Sierra">Sierra</option>
             <option value="Billy">Billy</option>
             <option value="Jonny">Jonny</option>
           </select>
         </div>
-        <div className="select-container">
-          <div className="label font-bold">Date</div>
-          <input className='bg-neutral-300 font-bold text-xl border border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
+        <div className='flex gap-2'>
+          <div className="label text-left font-bold">Date: </div>
+          <input className='bg-neutral-300 font-bold border border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
+        </div>
         </div>
         <div className="select-container">
-          <div className="label mb-2 font-bold">Time</div>
           <CustomSelect options={timeSlots} value={selectedTime} onChange={handleTimeChange} />
         </div>
-        <div>
-          <input placeholder='Your Email Address' type='email' className='bg-neutral-300 text-center border border-red-800 px-3 placeholder:text-red-800'>
+        <div className='flex gap-2'>
+          <div className='font-bold'>Email: </div>
+          <input type='email' className='bg-neutral-300 border border-red-800 px-3 placeholder:text-red-800'>
           </input>
-        </div>
         {message ? <p className='max-w-xl'>{message}</p> : null}
-        <button className='bg-red-800 max-w-fit mx-auto text-neutral-300 px-4 py-2' type="submit">Book Appointment</button>
+        <button className='bg-red-800 font-bold text-neutral-300 px-2' type="submit">Book Appointment</button>
+        </div>
       </form>
     </div>
   );
