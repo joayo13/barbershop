@@ -31,7 +31,7 @@ function App() {
         </div>
         <img className="w-1/4 grayscale object-cover hidden md:block" src={barberChairPhoto}></img>
       </section>
-      <section className="w-xl px-4 bg-red-950 bg-opacity-10 py-4 mt-4 flex flex-col md:flex-row mx-auto justify-center items-center gap-12">
+      <section className="w-xl pb-4 px-4 bg-red-950 bg-opacity-10 mt-4 flex flex-col md:flex-row mx-auto justify-center items-center gap-12">
         <BarberServices/>
         <SalonServices/>
       </section>
