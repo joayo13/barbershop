@@ -8,7 +8,7 @@ function CustomSelect({ options, value, onChange }) {
       {options.map((option) => (
         <button
           key={option}
-          className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-40' : 'bg-red-950 bg-opacity-10 p-4 w-40'}`}
+          className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-40 flex-grow' : 'bg-red-950 bg-opacity-10 p-4 w-40 flex-grow'}`}
           onClick={() => onChange(option)}
           type='button'
         >
@@ -64,8 +64,8 @@ function BarberShopReservation() {
 
   return (
     <div className='nav text-red-800 max-w-full flex justify-center overflow-hidden py-4'>
-      <form className='flex md:text-3xl text-xl flex-col gap-2 items-center px-4' onSubmit={handleSubmit}>
-      <div className='flex py-4 flex-col gap-4 px-3'>
+      <form className='flex text-xl flex-col items-center px-4' onSubmit={handleSubmit}>
+      <div className='flex py-4 flex-col gap-2 px-3'>
       <div className='flex flex-col gap-2 md:items-center'>
           <div>Stylist & Service:</div>
           <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border border-red-800 bg-neutral-300'>
@@ -79,7 +79,7 @@ function BarberShopReservation() {
           <div className="label text-left">Date:</div>
           <input min={newdate} className='bg-neutral-300 border border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
           <div className="label">Time Slot:</div>
-          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 text-center' disabled={true}></input>
+          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 md:text-center' disabled={true}></input>
         </div>
         </div>
         <div className="select-container">
