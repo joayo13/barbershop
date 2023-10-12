@@ -38,11 +38,11 @@ function SalonServices() {
         </div>
         <div className="text-left">
         <div className="flex items-end">
-        <h2 className="font-bold min-w-fit">Wash, Cut & Style - Style Change</h2>
+        <h2 className="font-bold min-w-fit">Wash, Cut & Style - Curly Hair</h2>
         <div className="h-px w-full mb-1 bg-neutral-400"></div>
-        <p>$68.00+</p>
+        <p>$60.00+</p>
         </div>
-        <p>For those who need a little extra time for big changes.</p>
+        <p>If your name is Eva this haircut is 100% free.</p>
         </div>
         <div className="text-left">
         <div className="flex items-end">
