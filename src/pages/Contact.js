@@ -31,7 +31,7 @@ function Contact() {
             <h2 className="absolute h-full top-0 flex items-center left-1/2 -translate-x-1/2 text-center py-4 text-6xl text-red-800">Contact Us</h2>
         </div>
         <div className="max-w-xl mx-auto p-6 text-red-800 nav">
-          <p className='text-3xl'>We'd love to hear from you! Fill out the form below to get in touch with us.</p>
+          <p className='text-xl'>We'd love to hear from you! Fill out the form below to get in touch with us.</p>
     
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="mb-4">
@@ -87,7 +87,7 @@ function Contact() {
             <div className='w-full flex justify-end'>
             <button
               type="submit"
-              className="bg-red-800 text-white py-2 px-4 w-fit hover:bg-red-600"
+              className="bg-red-800 text-white font-bold py-2 px-4 w-fit hover:bg-red-600"
             >
               Submit
             </button>
