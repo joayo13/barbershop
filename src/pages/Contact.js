@@ -30,12 +30,12 @@ function Contact() {
             <img className='brightness-75 grayscale object-cover h-[40vh] object-left-bottom w-full' src='https://lella.qodeinteractive.com/wp-content/uploads/2019/08/title-area-img-1.jpg'></img>
             <h2 className="absolute h-full top-0 flex items-center left-1/2 -translate-x-1/2 text-center py-4 text-6xl text-red-800">Contact Us</h2>
         </div>
-        <div className="max-w-xl mx-auto p-6 text-red-800 nav">
+        <div className="max-w-xl mx-auto p-6 text-red-800">
           <p className='text-xl'>We'd love to hear from you! Fill out the form below to get in touch with us.</p>
     
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-xl">Name:</label>
+              <label htmlFor="name" className="block text-xl font-bold">Name:</label>
               <input
                 type="text"
                 id="name"
@@ -48,7 +48,7 @@ function Contact() {
             </div>
     
             <div className="mb-4">
-              <label htmlFor="email" className="block text-xl">Email:</label>
+              <label htmlFor="email" className="block text-xl font-bold">Email:</label>
               <input
                 type="email"
                 id="email"
@@ -61,7 +61,7 @@ function Contact() {
             </div>
     
             <div className="mb-4">
-              <label htmlFor="phone" className="block text-xl">Phone:</label>
+              <label htmlFor="phone" className="block text-xl font-bold">Phone:</label>
               <input
                 type="tel"
                 id="phone"
@@ -73,7 +73,7 @@ function Contact() {
             </div>
     
             <div className="mb-4">
-              <label htmlFor="message" className="block text-xl">Message:</label>
+              <label htmlFor="message" className="block text-xl font-bold">Message:</label>
               <textarea
                 id="message"
                 name="message"
@@ -87,7 +87,7 @@ function Contact() {
             <div className='w-full flex justify-end'>
             <button
               type="submit"
-              className="bg-red-800 text-white font-bold py-2 px-4 w-fit hover:bg-red-600"
+              className="bg-red-800 text-white font-bold py-2 text-xl px-4 w-fit hover:bg-red-600 nav"
             >
               Submit
             </button>

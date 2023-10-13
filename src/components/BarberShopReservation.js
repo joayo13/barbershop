@@ -4,7 +4,7 @@ import ServicesSelect from './ServicesSelect';
 // Custom select component
 function CustomSelect({ options, value, onChange }) {
   return (
-    <div className="max-w-lg flex flex-wrap gap-2 justify-center text-xl">
+    <div className="max-w-lg flex flex-wrap gap-2 justify-center text-xl nav">
       {options.map((option) => (
         <button
           key={option}
@@ -63,34 +63,34 @@ function BarberShopReservation() {
   };
 
   return (
-    <div className='nav text-red-800 max-w-full flex justify-center overflow-hidden py-4'>
+    <div className=' text-red-800 max-w-full flex justify-center overflow-hidden py-4'>
       <form className='flex text-xl flex-col items-center px-4' onSubmit={handleSubmit}>
       <div className='flex py-4 flex-col gap-2 px-3'>
-      <div className='flex flex-col gap-2 md:items-center'>
-          <div>Stylist & Service:</div>
-          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border border-red-800 bg-neutral-300'>
+      <div className='flex flex-col gap-2 items-center'>
+          <div className='font-bold'>Stylist & Service:</div>
+          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border w-60 border-red-800 bg-neutral-300'>
             <option value="Sierra">Sierra</option>
             <option value="Billy">Billy</option>
             <option value="Jonny">Jonny</option>
           </select>
           <ServicesSelect setSelectedService={setSelectedService}/>
         </div>
-        <div className='flex gap-2 flex-col md:items-center'>
-          <div className="label text-left">Date:</div>
-          <input min={newdate} className='bg-neutral-300 border border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
-          <div className="label">Time Slot:</div>
-          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 md:text-center' disabled={true}></input>
+        <div className='flex gap-2 flex-col items-center'>
+          <div className="label text-left font-bold">Date:</div>
+          <input min={newdate} className='bg-neutral-300 border w-60 border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
+          <div className="label font-bold">Time Slot:</div>
+          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 text-center nav' disabled={true}></input>
         </div>
         </div>
         <div className="select-container">
           <CustomSelect options={timeSlots} value={selectedTime} onChange={handleTimeChange} />
         </div>
-        {message ? <p className='max-w-xl'>{message}</p> : null}
+        {message ? <p className='max-w-xl text-center py-4'>{message}</p> : null}
         <div className='flex flex-col gap-2 w-full py-4 justify-between'>
-          <div>Email: </div>
+          <div className='font-bold'>Email: </div>
           <input type='email' className='bg-neutral-300 border border-red-800 px-3 placeholder:text-red-800'>
           </input>
-        <button className='bg-red-800 text-neutral-300 px-4 py-2' type="submit">Book Appointment</button>
+        <button className='bg-red-800 nav text-neutral-300 px-4 py-2' type="submit">Book Appointment</button>
         </div>
       </form>
       
