@@ -14,7 +14,7 @@ function Team() {
         </div>
         <section className='flex flex-wrap justify-center gap-8 py-8 bg-red-950 bg-opacity-10 text-neutral-900'>
              <div className='relative'>
-               <div className='absolute z-10 text-2xl top-0 px-2 py-8 flex justify-center items-end gap-2 w-full text-red-800'>
+               <div className='absolute z-10 text-2xl top-0 px-2 py-8 flex justify-center items-end gap-2 w-full text-neutral-950'>
                   <p className='font-bold'>Sierra</p>
                   <p>|</p>
                   <p>Expert Stylist</p>
