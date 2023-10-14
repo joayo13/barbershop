@@ -4,11 +4,11 @@ import ServicesSelect from './ServicesSelect';
 // Custom select component
 function CustomSelect({ options, value, onChange }) {
   return (
-    <div className="max-w-lg flex flex-wrap gap-2 justify-center text-xl nav">
+    <div className="w-96 flex flex-wrap gap-2 justify-center text-xl nav">
       {options.map((option) => (
         <button
           key={option}
-          className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-40 flex-grow' : 'bg-red-950 bg-opacity-10 p-4 w-40 flex-grow'}`}
+          className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-24 flex-grow' : 'bg-red-950 bg-opacity-10 p-4 w-24 flex-grow'}`}
           onClick={() => onChange(option)}
           type='button'
         >
@@ -64,11 +64,11 @@ function BarberShopReservation() {
 
   return (
     <div className=' text-red-800 max-w-full flex justify-center overflow-hidden py-4'>
-      <form className='flex text-xl flex-col items-center px-4' onSubmit={handleSubmit}>
+      <form className='flex text-2xl flex-col items-center px-4' onSubmit={handleSubmit}>
       <div className='flex py-4 flex-col gap-2 px-3'>
       <div className='flex flex-col gap-2 items-center'>
           <div className='font-bold'>Stylist & Service:</div>
-          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border w-60 border-red-800 bg-neutral-300'>
+          <select required={true} value={selectedStylist} onChange={(e) => handleStylistChange(e.target.value)} className='border w-80 border-red-800 bg-neutral-300'>
             <option value="Sierra">Sierra</option>
             <option value="Billy">Billy</option>
             <option value="Jonny">Jonny</option>
@@ -77,16 +77,16 @@ function BarberShopReservation() {
         </div>
         <div className='flex gap-2 flex-col items-center'>
           <div className="label text-left font-bold">Date:</div>
-          <input min={newdate} className='bg-neutral-300 border w-60 border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
+          <input min={newdate} className='bg-neutral-300 border w-80 border-red-800' required={true} type="date" value={selectedDate} onChange={handleDateChange} />
           <div className="label font-bold">Time Slot:</div>
-          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 text-center nav' disabled={true}></input>
+          <input value={selectedTime || 'Not Selected'} className='bg-neutral-300 text-center' disabled={true}></input>
         </div>
         </div>
         <div className="select-container">
           <CustomSelect options={timeSlots} value={selectedTime} onChange={handleTimeChange} />
         </div>
         {message ? <p className='max-w-xl text-center py-4'>{message}</p> : null}
-        <div className='flex flex-col gap-2 w-full py-4 justify-between'>
+        <div className='flex flex-col gap-2 w-80 py-4 justify-between'>
           <div className='font-bold'>Email: </div>
           <input type='email' className='bg-neutral-300 border border-red-800 px-3 placeholder:text-red-800'>
           </input>
