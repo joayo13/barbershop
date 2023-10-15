@@ -1,10 +1,6 @@
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import caro1 from '../images/caro1.jpg'
-import caro2 from '../images/caro2.jpg'
-import caro3 from '../images/caro3.jpg'
-import caro4 from '../images/caro4.jpg'
 function ImageCarousel(props) {  
   const responsive = {
     desktop: {
@@ -42,10 +38,10 @@ function ImageCarousel(props) {
     dotListClass="custom-dot-list-style"
     itemClass="carousel-item-padding-40-px"
   >
-    <img src={caro1}></img>
-    <img src={caro2}></img>
-    <img src={caro3}></img>
-    <img src={caro4}></img>
+    <img src='https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img>
+    <img src='https://images.pexels.com/photos/1319459/pexels-photo-1319459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img>
+    <img src='https://images.pexels.com/photos/1453005/pexels-photo-1453005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img>
+    <img src='https://images.pexels.com/photos/4969838/pexels-photo-4969838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'></img>
   </Carousel>
   )
 }

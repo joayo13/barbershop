@@ -1,6 +1,5 @@
 import VideoBanner from "./components/VideoBanner";
 import ImageCarousel from "./components/ImageCarousel";
-import barberChairPhoto from './images/pexels-lisa-fotios-1895701.jpg'
 import BarberServices from "./components/BarberServices";
 import SalonServices from "./components/SalonServices";
 import { useEffect } from "react";
@@ -29,7 +28,7 @@ function App() {
         <p className="max-w-lg mx-auto text-xl">Founded in 2023, Billy's Barber was born out of a lifelong dream and dedication to the craft of barbering. Billy, our founder and master barber, envisioned a place where everyone could experience the timeless art of grooming in a comfortable and welcoming environment.</p>
         <p className="max-w-lg mx-auto text-xl">Our team of experienced and skilled barbers is the backbone of our success. We take pride in our talented and diverse staff, each of whom is committed to delivering the highest level of service. Our barbers are not just professionals; they are artists who continually refine their skills and stay at the forefront of industry trends.</p>
         </div>
-        <img className="w-1/4 grayscale object-cover hidden md:block" src={barberChairPhoto}></img>
+        <img className="w-1/4 grayscale object-cover hidden md:block" src='https://images.pexels.com/photos/1895701/pexels-photo-1895701.jpeg'></img>
       </section>
       <section className="w-xl pb-4 px-4 bg-red-950 bg-opacity-10 mt-4 flex flex-col md:flex-row mx-auto justify-center items-center gap-12">
         <BarberServices/>

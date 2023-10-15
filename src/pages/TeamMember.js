@@ -59,7 +59,7 @@ function TeamMember() {
         
             Jonny's story was one of artistic passion, self-expression, and the harmonious fusion of traditional and contemporary hairstyling that made "Billy's Barber" a place where clients could not only receive a top-notch haircut but also embark on a transformative journey of self-discovery.
           `,
-            image: 'https://images.pexels.com/photos/6274712/pexels-photo-6274712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            image: 'https://images.pexels.com/photos/2834009/pexels-photo-2834009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
             subheader: 'Expert Stylist'
         }
     }
