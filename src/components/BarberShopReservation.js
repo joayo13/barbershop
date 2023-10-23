@@ -1,23 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ServicesSelect from './ServicesSelect';
 
 // Custom select component
-function CustomSelect({ options, value, onChange }) {
-  return (
-    <div className="w-96 flex flex-wrap gap-2 justify-center text-xl nav">
-      {options.map((option) => (
-        <button
-          key={option}
-          className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-24 flex-grow' : 'bg-red-950 bg-opacity-10 p-4 w-24 flex-grow'}`}
-          onClick={() => onChange(option)}
-          type='button'
-        >
-          {option}
-        </button>
-      ))}
-    </div>
-  );
-}
+
 
 function BarberShopReservation() {
   const [selectedStylist, setSelectedStylist] = useState('Sierra');
@@ -25,6 +10,16 @@ function BarberShopReservation() {
   const [selectedTime, setSelectedTime] = useState('');
   const [selectedService, setSelectedService] = useState('Signature Cut & Style');
   const [message, setMessage] = useState('')
+  const [datePicked, setDatePicked] = useState([])
+
+  useEffect(() => {
+    setDatePicked([])
+    for(let i = 0; i < 20; i++) {
+      if(Math.floor(Math.random() * 2) === 1)  {
+        setDatePicked(prev => prev.concat(i))
+      }
+    }
+  },[selectedDate])
 
   const handleStylistChange = (stylist) => {
     setSelectedStylist(stylist);
@@ -61,6 +56,24 @@ function BarberShopReservation() {
     setMessage(`Successfully Booked Reservation with ${selectedStylist} for ${selectedService} on ${selectedDate} at ${selectedTime}. We will be reaching out to you shortly!`);
     // You can implement your booking logic here
   };
+  function CustomSelect({ options, value, onChange }) {
+    return (
+      <div className="w-96 flex flex-wrap gap-2 justify-center text-xl nav">
+        {options.map((option, index) => (
+          <button
+            
+            disabled={ datePicked.includes(index) ? true : false}
+            key={option}
+            className={`custom-option ${value === option ? 'bg-red-950 bg-opacity-30 p-4 w-24 flex-grow' : 'bg-red-950 bg-opacity-10 p-4 w-24 flex-grow'}`}
+            onClick={() => onChange(option)}
+            type='button'
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className=' text-red-800 max-w-full flex justify-center overflow-hidden py-4'>
